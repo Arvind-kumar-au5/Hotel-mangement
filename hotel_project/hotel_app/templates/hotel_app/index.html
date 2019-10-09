@@ -1,0 +1,34 @@
+{% extends 'hotel_app/base.html'%}
+{% block content %}
+<div class="container">
+	<div class="jumbotron">
+	<table border="1">
+	<tr>
+		<td>
+			<h3>Accommodation</h3>
+			     <div id="test">Since 1989, Lone Star Trucking Safety Consultant
+				Services has been helping trucking firms with safety
+				issues including DOT compliance and Loss Control
+				recommendations. We have clients from Utah to Florida. Our rates are
+				reasonable... why not give us a call?
+			</div>
+
+		</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+	</tr>
+
+</table>
+		
+	</div>
+</div>
+
+{% endblock %}
+
+<form action="" method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Create" />
+</form>

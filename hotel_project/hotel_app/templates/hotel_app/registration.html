@@ -1,0 +1,20 @@
+{% extends "hotel_app/base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="jumbotron">
+  {% if register %}
+  <h1>Thank you for register ,Please login here <a href="/user_login/">Login</a></h1>
+  {% else %}
+  <h1>Register here</h1>
+  <h3>Fill Out the form:</h3>
+  <form enctype="multipart/form-data"  method="post">
+    {% csrf_token %}
+    {{user_form.as_p}}
+    {{profile_form.as_p}}
+    <input type="submit" class="btn btn-danger " name="" value="Register">
+
+  </form>
+  {% endif %}
+</div>
+{% endblock %}

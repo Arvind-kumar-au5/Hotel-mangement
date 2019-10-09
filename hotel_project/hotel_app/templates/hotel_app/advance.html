@@ -1,0 +1,27 @@
+{% extends 'hotel_app/base.html' %}
+{% block menu_home_class %}active{% endblock %}
+{% block content %}
+<div class="hotel_reserve_box">
+         <h3> Hotel Advance Booking </h3><br>
+         <form action='.' method='POST'>{% csrf_token %}
+    {{ form.as_p }}
+
+    <input type='submit' value='Save' class="btn btn-danger" />
+    <input type='submit' value='Cancel' class="btn btn-danger" />
+
+</form>
+     </div>
+  <script>
+        function finalCost(){
+            var roomType = document.getElementById("room_type").value;
+            var roomNum = document.getElementById("room_number").value;
+            var personNum = document.getElementById("person_number").value;
+            var childNum = document.getElementById("child_number").value;
+            var resFacilities = document.getElementById("res_facilities").value;
+
+            var total = (parseInt(roomType)*10) + ((roomNum)*2) + ((personNum)*3) + ((childNum)*2) + ((resFacilities)*5)
+
+            document.getElementById("result").innerHTML = total;
+        }
+    </script>
+{% endblock %}
