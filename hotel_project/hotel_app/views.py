@@ -95,3 +95,9 @@ def advance_booking(request):
     
 def about(request):
     return render(request,'hotel_app/about.html')
+
+def room_terrif(request):
+    return render(request, 'hotel_app/room_teriff.html')  
+
+def other(request):
+    return render(request,'hotel_app/other.html')      
